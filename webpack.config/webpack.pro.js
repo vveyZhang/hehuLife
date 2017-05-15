@@ -16,9 +16,8 @@ module.exports={
             loaders: ['babel'],
             include: helper.root('src')
         }, {
-            test: /\.css?$/,
+            test: /\.css$/,
             loader: 'style-loader!css-loader',
-            include: helper.root('src')
         },{
             test:/\.(jpg|png)$/,
             loader:'url?limit=8192'

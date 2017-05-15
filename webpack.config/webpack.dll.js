@@ -10,7 +10,8 @@ var vendors = [
     'redux-logger',
     'redux-promise',
     'redux-thunk',
-    'isomorphic-fetch'
+    'isomorphic-fetch',
+    "antd"
 ];
 
 module.exports = {

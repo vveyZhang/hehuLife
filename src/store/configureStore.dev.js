@@ -1,20 +1,13 @@
 import { createStore, compose,applyMiddleware } from 'redux';
-import { persistState } from 'redux-devtools';
 import todoReducers from '../reducers/reducers';
-import DevTools from '../containers/DevTools';
 import thunk from 'redux-thunk';
 import promise from 'redux-promise';
 import logger from 'redux-logger';
 
 let middleware=[thunk,promise,logger];
 const enhancer = compose(
-  applyMiddleware(...middleware) ,
-  DevTools.instrument(),
-  persistState(
-    window.location.href.match(
-      /[?&]debug_session=([^&#]+)\b/
-    )
-  )
+  applyMiddleware(...middleware),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
 export default function configureStore(initialState) {
