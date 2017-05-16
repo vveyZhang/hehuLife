@@ -8,10 +8,7 @@ export default class Root extends Component{
         return(
             <AppContainer >
                 <Provider store={store}>
-                    <div>
                         <App />
-                    </div>
-
                 </Provider>
             </AppContainer>
         )
