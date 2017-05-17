@@ -7,7 +7,9 @@ const SubMenu = Menu.SubMenu;
 
 import '../css/style.css';
 import Position from './position.js'
-import MyHeader from './header.js'
+import MyHeader from './header.js';
+
+import ShopFrom from './infor.js'
 export default class App extends Component {
     state = {
         collapsed: false
@@ -65,6 +67,7 @@ export default class App extends Component {
                     <MyHeader collapsed={this.state.collapsed} toggle={()=>this.toggle()} />
                     <Position />
                     <Content style={{ margin: '0px 16px', padding:10, background: '#fff'}}>
+                        <ShopFrom />
                     </Content>
                 </Layout>
             </Layout>

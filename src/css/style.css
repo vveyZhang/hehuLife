@@ -55,3 +55,47 @@
 .second-nav{
     font-size: 18px;
 }
+.infor-container{
+    margin: 100px 100px 0px 100px;
+}
+.wx-label{
+    font-size: 14px;
+    line-height: 36px;
+    height: 36px;
+    text-align: right;
+    color: #333;
+}
+.wx-name{
+    height: 36px;
+    padding-left: 6px;
+    line-height: 36px;
+    color: #000;
+    font-size: 14px;
+}
+.row{
+    margin-bottom: 15px;
+}
+.ant-form-item-label label{
+    font-size: 14px;
+    color: #333;
+}
+.ant-form-item-control input{
+    font-size: 14px;
+    color: #000;
+}
+input.infor-input{
+  width: 30%;
+}
+.editor-btn{
+    margin-left: 20px;
+    font-size: 14px;
+    color: #000000;
+    cursor: pointer;
+}
+.editor-btn:hover{
+    color: #f12020;
+}
+.infor-value{
+    font-size: 14px;
+    color: #000;
+}

@@ -6,7 +6,8 @@ new webpackDevServer(webpack(config),{
     publicPath:config.output.publicPath,
     historyApiFallback:true,
     hot:true,
-    inline:true
+    inline:true,
+    progress:true
 
 }).listen(8080,'localhost',function(err,res){
         if(err)console.log(err);
