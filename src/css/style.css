@@ -28,21 +28,30 @@
     padding-top: 24px;
 }
 .nav-icon{
-    font-size: 18px;
+    font-size: 22px;
 }
 .nav-text{
-    font-size: 16px;
+    font-size: 18px;
 }
+
 .nav-label{
-    line-height: 50px;
-    height: 50px;
-    border-bottom: 1px solid #ececec;
+    line-height: 60px!important;
+    height: 60px!important;
+    border-top: 1px solid #ececec;
+}
+.ant-menu-submenu-title{
+    line-height: 60px!important;
+    height: 60px!important;
 }
 .nav-sub{
-    border-bottom: 1px solid #ececec;
+    border-top: 1px solid #ececec;
+
 }
 .position{
     margin-left: 16px;
     line-height: 40px;
     height: 40px;
+}
+.second-nav{
+    font-size: 18px;
 }

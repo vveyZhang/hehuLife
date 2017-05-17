@@ -4,8 +4,8 @@ import $ from 'jQuery'
 import { Layout, Menu, Icon } from 'antd';
 const { Sider, Content } = Layout;
 const SubMenu = Menu.SubMenu;
-import '../css/style.css';
 
+import '../css/style.css';
 import Position from './position.js'
 import MyHeader from './header.js'
 export default class App extends Component {
@@ -25,7 +25,7 @@ export default class App extends Component {
         })
     };
     componentUnMount(){
-        $(window).off('resize')
+        $(window).off('resize');
     }
     toggle = () => {
         this.setState({
@@ -45,7 +45,7 @@ export default class App extends Component {
                     <div className="logo" >
                         <img src="" width='100' height='40' alt=""/>
                     </div>
-                    <Menu  className='nav' theme="light" mode="inline" defaultSelectedKeys={['sub1']}>
+                    <Menu  className='nav' theme="light" mode="inline" defaultOpenKeys={['nav2']} defaultSelectedKeys={['sub1']}>
                         <Menu.Item key="nav1" className="nav-label">
                             <Icon type="user"  className='nav-icon'/>
                             <span className="nav-text">我的店铺</span>
