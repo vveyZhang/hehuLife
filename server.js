@@ -13,10 +13,3 @@ new webpackDevServer(webpack(config),{
         if(err)console.log(err);
         console.log('Listening port 8080');
 });
-//proxy: {
-//    '/handle/*': {
-//        target: 'http://vveyzhang.com',
-//            host: 'vveyzhang.com',
-//            secure: false
-//    }
-//}
