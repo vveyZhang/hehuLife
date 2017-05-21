@@ -25,7 +25,7 @@
     background: #ffffff;
 }
 .nav{
-    padding-top: 24px;
+    padding-top: 40px;
 }
 .nav-icon{
     font-size: 22px;
@@ -45,7 +45,12 @@
 }
 .nav-sub{
     border-top: 1px solid #ececec;
-
+    padding-left: 0px;
+}
+.nav-sub .ant-menu-item-group-title{
+   padding-left: 24px;
+    height: 60px;
+    line-height: 60px;
 }
 .position{
     margin-left: 16px;
@@ -63,7 +68,7 @@
     line-height: 40px;
     height: 40px;
     text-align: right;
-    color: #333;
+    color: #000;
 }
 .wx-name{
     height: 40px;
@@ -153,5 +158,71 @@ div.ant-form-item-label label{
     margin-left: 10px;
 }
 .infor-row .ant-form-item-control  textarea{
-    height: 300px;
+    height: 150px;
+}
+.infor-container{
+    padding-bottom: 30px;
+}
+.infor-submit{
+    margin-left: 10px;
+}
+.nav-text{
+    color: #333!important;
+}
+.nav-sub .nav-icon{
+    margin-right: 8px;
+    color: rgba(0, 0, 0, 0.65098);
+}
+.nav-sub .second-nav{
+    padding-left: 34px!important;
+}
+.nav-sub .second-nav-shop{
+    padding-left: 56px!important;
+}
+.ant-radio-wrapper{
+    color: #000000;
+    vertical-align: -3px;
+    font-size: 16px;
+}
+ul.ant-table-pagination{
+    float: left;
+}
+.push-btn{
+    float: right;
+}
+.push-title{
+    text-align: right;
+    font-size: 16px;
+    color: #333333;
+    line-height: 40px;
+    height: 40px;
+}
+.push-row{
+    margin-bottom: 25px;
+}
+.push-upload{
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    line-height: 200px;
+    display: block;
+    border: 1px solid #d9d9d9;
+    font-size: 40px;
+}
+.push-upload .ant-upload{
+    font-size: 40px;
+    display: block;
+    color: #999999;
+}
+.push-row .ant-input{
+    font-size: 16px;
+    color: #333333;
+    line-height: 40px;
+    height: 40px;
+    width:80%;
+}
+.push-row textarea.ant-input{
+    height: 200px;
+    overflow: hidden;
+    resize: none;
 }
