@@ -225,4 +225,16 @@ ul.ant-table-pagination{
     height: 200px;
     overflow: hidden;
     resize: none;
+    width:100%;
+}
+.push-row .ant-select-selection{
+    height: 34px;
+    margin: 3px 0px;
+    line-height: 34px;
+}
+.push-row .ant-select-selection__rendered{
+    line-height: 34px;
+}
+#editor{
+    height: 400px;
 }

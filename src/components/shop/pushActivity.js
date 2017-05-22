@@ -1,11 +1,11 @@
 import React,{Component} from 'react';
 import PropTypes from 'prop-types';
-
 import { Steps, Button, message,Row,Col,Input,Upload,Select,Icon} from 'antd';
+import wangEditor  from 'wangeditor';
 const Step = Steps.Step;
 const Option = Select.Option;
+let editor=null;
 function beforeUpload(file) {
-    console.log(file);
     const isJPG = file.type === 'image/jpeg';
     if (!isJPG) {
         message.error('图片只能为jpg!');
@@ -16,15 +16,37 @@ function beforeUpload(file) {
     }
     return isJPG && isLt1M;
 }
+function StartEditor(){
+     editor = new wangEditor('editor');
+     editor.config.menus = wangEditor.config.menus.map( function(item, key) {
+             if (item === 'video') {
+                 return null;
+             }
+             return item;
+         });
+     editor.create();
+}
 export default class PushActivity extends React.Component {
     state = {
         current: 0,
     };
+    componentDidUpdate(){
+        if(this.state.current==1){
+            if(!editor){
+                StartEditor();
+                return
+            };
+            editor.undestroy();
+        };
+    }
     next() {
+
         const current = this.state.current + 1;
         this.setState({ current });
+
     }
     prev() {
+        editor.destroy()
         const current = this.state.current - 1;
         this.setState({ current });
     }
@@ -36,7 +58,7 @@ export default class PushActivity extends React.Component {
             content: <div>
                 <Row className="push-row">
                     <Col className="push-title" span={8} ><p >活动标题：</p></Col>
-                    <Col span={10}><Input/></Col>
+                    <Col span={10}><Input placeholder="标题..."/></Col>
                 </Row>
                 <Row className="push-row">
                     <Col className="push-title" span={8} ><p >所属店铺：</p></Col>
@@ -63,37 +85,37 @@ export default class PushActivity extends React.Component {
                 </Row>
                 <Row className="push-row">
                     <Col className="push-title" span={8} ><p >备注：</p></Col>
-                    <Col span={10}><Input type='textarea' /></Col>
+                    <Col span={10}><Input type='textarea' placeholder="比如：注意事项、时间、参加条件等等"/></Col>
                 </Row>
             </div>
         }, {
             title: '活动内容',
-            content: <div className="push-editor">
-                
-            </div>,
+            content:'',
         }];
         return (
             <div>
                 <Steps current={current} style={{margin:"30px auto",width:'450px'}}>
                     {steps.map(item => <Step key={item.title} title={item.title} />)}
                 </Steps>
-                <div className="steps-content" style={{margin:"30px 100px"}}>{steps[this.state.current].content}</div>
+                <div className="steps-content" style={{margin:"30px 100px"}}>{steps[this.state.current].content}
+                    <div id="editor" style={{display:this.state.current==1?'block':'none'}}></div>
+                </div>
                 <div className="steps-action" style={{"textAlign":'center'}}>
                     {
                         this.state.current < steps.length - 1
                         &&
-                        <Button type="primary" onClick={() => this.next()}>Next</Button>
+                        <Button type="primary" onClick={() => this.next()}>下一步</Button>
                     }
                     {
                         this.state.current === steps.length - 1
                         &&
-                        <Button type="primary" onClick={() => message.success('Processing complete!')}>Done</Button>
+                        <Button type="primary" onClick={() => message.success('Processing complete!')}>完成</Button>
                     }
                     {
                         this.state.current > 0
                         &&
                         <Button style={{ marginLeft: 8 }} onClick={() => this.prev()}>
-                            Previous
+                            上一步
                         </Button>
                     }
                 </div>
