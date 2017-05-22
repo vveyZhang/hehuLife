@@ -69,7 +69,7 @@ export default class PushActivity extends React.Component {
         }, {
             title: '活动内容',
             content: <div className="push-editor">
-                
+
             </div>,
         }];
         return (
