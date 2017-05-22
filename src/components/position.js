@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import PropTypes from 'prop-types';
 import {Breadcrumb } from 'antd'
 export default class Position extends Component{
+
     render(){
         return(
             <Breadcrumb className='position'>
