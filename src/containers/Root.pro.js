@@ -4,14 +4,14 @@ import {Provider} from 'react-redux';
 import {Router} from 'react-router';
 import { createBrowserHistory } from 'history';
 
-import routes from './router.js';
+import Routes from './router.js';
 export default class Root extends Component{
     render(){
         const {store}=this.props;
         const history = syncHistoryWithStore(createBrowserHistory(), store);
         return(
             <Provider store={store}>
-                <Router history={history} children={routes} />
+                <Router history={history} children={Routes} />
             </Provider>
         )
     }

@@ -3,7 +3,7 @@ import {render} from 'react-dom';
 import Root from './containers/Root';
 import configureStore from './store/configureStore';
 const rtElement=document.getElementById('root');
-const store=configureStore()
+const store=configureStore();
 try{
     render(<Root store={store}/> ,rtElement)
 }catch(e){

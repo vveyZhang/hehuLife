@@ -21,7 +21,7 @@ function StartEditor(){
     editor = new wangEditor('editor');
     editor.create();
 }
-export default class PushActivity extends React.Component {
+export default class PushArticle extends React.Component {
     state = {
         current: 0,
         preview:false

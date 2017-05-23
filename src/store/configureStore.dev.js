@@ -3,7 +3,6 @@ import todoReducers from '../reducers/reducers';
 import thunk from 'redux-thunk';
 import promise from 'redux-promise';
 import logger from 'redux-logger';
-
 let middleware=[thunk,promise,logger];
 const enhancer = compose(
   applyMiddleware(...middleware),
