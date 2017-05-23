@@ -1,5 +1,6 @@
 import {ADD_TODO,COMPLETE_TODO,SET_VISIBILITY_FILTER} from '../actions/actionTypes';
 import {combineReducers} from 'redux'
+import {routerReducer} from 'react-router-redux';
 export const visibilityFilter={
     SHOW_ALL:'SHOW_ALL',
     SHOW_COMPLETE:'SHOW_COMPLETE',
@@ -30,6 +31,7 @@ function todos(state=[],action){
 }
 const todoReducers=combineReducers({
     setVisibilityFilter,
-    todos
+    todos,
+    routing:routerReducer
 });
 export default todoReducers;

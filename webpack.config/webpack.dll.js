@@ -11,7 +11,9 @@ var vendors = [
     'redux-promise',
     'redux-thunk',
     'isomorphic-fetch',
-    "antd"
+    "antd",
+    'react-router-redux',
+    'prop-types',
 ];
 
 module.exports = {

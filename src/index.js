@@ -1,13 +1,11 @@
 import React from "react";
 import {render} from 'react-dom';
-import App from './containers/Root';
+import Root from './containers/Root';
 import configureStore from './store/configureStore';
-import todoApp from './reducers/reducers.js';
 const rtElement=document.getElementById('root');
-
 const store=configureStore()
 try{
-    render(<App store={store}/> ,rtElement)
+    render(<Root store={store}/> ,rtElement)
 }catch(e){
     console.error(e.stack)
 }

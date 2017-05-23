@@ -1,11 +1,18 @@
 import React,{Component} from 'react';
 import PropTypes from 'prop-types';
-import App from '../components/app';
+import {Provider} from 'react-redux';
+import {Router} from 'react-router';
+import { createBrowserHistory } from 'history';
 
+import routes from './router.js';
 export default class Root extends Component{
     render(){
+        const {store}=this.props;
+        const history = syncHistoryWithStore(createBrowserHistory(), store);
         return(
-            <App />
+            <Provider store={store}>
+                <Router history={history} children={routes} />
+            </Provider>
         )
     }
 }
