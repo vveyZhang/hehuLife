@@ -66,7 +66,7 @@ class InforForm extends Component {
                                             <img src={this.state.shopUrl} alt="" className="shop-img" />
                                             <p className="shop-uploader-tips">修改</p>
                                         </div>
-                                         :
+                                        :
                                         <Icon type="plus" className="shop-uploader-trigger" />
                                 }
                                 <span className="upload-tips">图片格式为jpg,且大小不能超过200KB</span>
@@ -93,7 +93,7 @@ class InforForm extends Component {
                                             <img src={this.state.shopUrl} alt="" className="shop-img" />
                                             <p className="shop-uploader-tips">修改</p>
                                         </div>
-                                         :
+                                        :
                                         <div><Icon type="plus" className="shop-uploader-trigger" /></div>
 
                                 }
@@ -126,5 +126,5 @@ class InforForm extends Component {
     }
 }
 
-const ShopInfor= Form.create()(InforForm);
-export default ShopInfor
+const MyTravel= Form.create()(InforForm);
+export default MyTravel

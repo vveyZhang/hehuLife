@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import PropTypes from 'prop-types';
 import { Steps, Button, message,Row,Col,Input,Upload,Select,Icon} from 'antd';
 import wangEditor  from 'wangeditor';
-import PhoneLayer from './phone.js'
+import PhoneLayer from './../../common/phone.js'
 const Step = Steps.Step;
 const Option = Select.Option;
 let editor=null;
@@ -18,10 +18,10 @@ function beforeUpload(file) {
     return isJPG && isLt1M;
 }
 function StartEditor(){
-     editor = new wangEditor('editor');
-     editor.create();
+    editor = new wangEditor('editor');
+    editor.create();
 }
-export default class PushActivity extends React.Component {
+export default class PushTravel extends React.Component {
     state = {
         current: 0,
         preview:false

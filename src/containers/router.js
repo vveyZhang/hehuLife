@@ -4,23 +4,44 @@ import React from 'react';
 import {Route,IndexRoute,IndexRedirect,browserHistory} from 'react-router';
 
 import App from './../components/app.js'
-import ShopContainer from './../components/shop/index.js'
-import MyInfor from './../components/shop/myInfor.js';
-import ShopInfor from './../components/shop/shopInfor.js';
-import ActivityList from './../components/shop/activityList.js';
-import ArticleList from './../components/shop/articleList.js'
-import PushActivity from './../components/shop/pushActivity.js'
-import PushArticle from './../components/shop/pushArticle.js'
+
+/*
+* 用户店铺
+* */
+import UserShop from '../components/userShops/index.js'
+import MyInfor from '../components/common/myInfor.js';
+import ArticleList from '../components/common/articleList.js'
+import PushArticle from '../components/common/publishArticle.js'
+/*
+* 普通店铺
+* */
+import MyShop from '../components/userShops/shop/myShop.js';
+import AddShop from '../components/userShops/shop/addShop.js'
+import ActivityList from '../components/userShops/shop/activityList.js';
+import PushActivity from '../components/userShops/shop/publishActivity.js'
+/*
+* 旅游店铺
+* */
+import MyTravel  from '../components/userShops/travel/myTravel.js';
+import TravelList from '../components/userShops/travel/travelList.js';
+import PushTravel from '../components/userShops/travel/publishTravel.js'
+
 const routes=
     <Route path="/" component={App}>
-        <Route path="shop" component={ShopContainer}>
+        <Route path="usershop" component={UserShop}>
             <Route path="myinfor" component={MyInfor} />
-            <Route path="myshop/:id" component={ShopInfor} />
-            <Route path="addshop" component={ShopInfor} />
-            <Route path="activity" component={ActivityList} />
-            <Route path="pactivity" component={PushActivity} />
-            <Route path="article" component={ArticleList} />
-            <Route path="particle" component={PushArticle} />
+            <Route path="artlist" component={ArticleList} />
+            <Route path="pubart" component={PushArticle} />
+
+            <Route path="myshop/:id" component={MyShop} />
+            <Route path="addshop" component={AddShop} />
+            <Route path="actlist" component={ActivityList} />
+            <Route path="pubact" component={PushActivity} />
+
+            <Route path="mytravel" component={MyTravel} />
+            <Route path="tralist" component={TravelList} />
+            <Route path="pubtra" component={PushTravel} />
+
         </Route>
     </Route>;
 export default routes

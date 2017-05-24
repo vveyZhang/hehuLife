@@ -298,3 +298,6 @@ ul.ant-table-pagination{
     top: 0px;
     cursor: pointer;
 }
+.push-btn .anticon{
+    margin-right: 6px;
+}
