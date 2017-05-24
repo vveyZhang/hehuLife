@@ -1,15 +1,15 @@
 import React,{Component} from 'react';
 import PropTypes from 'prop-types';
 import { Table, Button,Icon,Popconfirm} from 'antd';
-
+import {Link} from 'react-router'
 const columns = [{
     title: '标题',
     dataIndex: 'title',
-    width:'20%'
+    width:'15%'
 }, {
     title: '内容',
     dataIndex: 'content',
-    width:'35%'
+    width:'25%'
 },{
     title: '类型',
     dataIndex: 'type',
@@ -25,7 +25,26 @@ const columns = [{
     onFilter: (value, record) =>{
         if(value==record.type) return record
     }
-}, {
+},{
+    title: '状态',
+    dataIndex: 'status',
+    width:'10%',
+    filters: [{
+        text: '审核中',
+        value: "审核中"
+    },{
+        text: '已通过',
+        value: "已通过"
+    }, {
+            text: '未通过',
+            value: "未通过"
+        }
+    ],
+    onFilter: (value, record) =>{
+        if(value==record.status) return record
+    }
+},
+    {
     title: '点赞数',
     dataIndex: 'like',
     sorter: (a, b) => a.like - b.like,
@@ -48,32 +67,22 @@ const columns = [{
                 <a href="#" className="ant-dropdown-link"><Icon type="edit" />编辑</a>
     </span>
         ),
-        width:'20%'
+        width:'25%'
 
     }
 ];
 
 const data = [];
 for (let i = 0; i <30; i++) {
-    if(i%2==0){
-        data.push({
-            key: i,
-            title: "有优惠",
-            content: "好喝",
-            type: "好喝奶行",
-            like:i+5,
-            time:'2015'
-        });
-    }else{
-        data.push({
-            key: i,
-            title: "有优惠",
-            content: "健康",
-            shop: "呵护生活",
-            like:i+5,
-            time:'2015',
-        });
-    }
+    data.push({
+        key: i,
+        title: "有优惠",
+        content: "好喝",
+        type: i%2==0?"好喝奶行":'呵护生活',
+        like:i+5,
+        status:i%2==0?"审核中":"已通过",
+        time:'2015'
+    });
 }
 
 export default class ArticleList extends React.Component {
@@ -110,7 +119,7 @@ export default class ArticleList extends React.Component {
                             >删除</Button>
                     </Popconfirm>
                     <span style={{ marginLeft: 8 }}>{hasSelected ? `选择 ${selectedRowKeys.length}` : ''}</span>
-                    <Button type="primary" className="push-btn"><Icon type="upload"></Icon><span>写文章</span></Button>
+                    <Button type="primary" className="push-btn"><Link to="/shop/particle"><Icon type="upload"></Icon><span>写文章</span></Link></Button>
                 </div>
                 <Table rowSelection={rowSelection} columns={columns} dataSource={data} />
             </div>

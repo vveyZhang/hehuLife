@@ -94,7 +94,7 @@ export default class PushActivity extends React.Component {
             content:''
         }];
         return (
-            <div>
+            <div className="push-activity-container">
                 <Steps current={current} style={{margin:"30px auto",width:'450px'}}>
                     {steps.map(item => <Step key={item.title} title={item.title} />)}
                 </Steps>

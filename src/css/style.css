@@ -37,14 +37,14 @@
 .nav-label{
     line-height: 60px!important;
     height: 60px!important;
-    border-top: 1px solid #ececec;
+    border-bootom: 1px solid #ececec;
 }
 .ant-menu-submenu-title{
     line-height: 60px!important;
     height: 60px!important;
 }
 .nav-sub{
-    border-top: 1px solid #ececec;
+    border-bootom: 1px solid #ececec;
     padding-left: 0px;
 }
 .nav-sub .ant-menu-item-group-title{
@@ -168,6 +168,9 @@ div.ant-form-item-label label{
 }
 .nav-text{
     color: #333!important;
+}
+.ant-menu-item :hover .nav-text{
+    color: #108ee9!important;
 }
 .nav-sub .nav-icon{
     margin-right: 8px;

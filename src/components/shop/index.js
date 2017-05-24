@@ -5,9 +5,10 @@ import { Layout, Menu, Icon } from 'antd';
 const { Sider, Content } = Layout;
 const MenuItemGroup = Menu.ItemGroup;
 import '../../css/style.css';
-import Position from './../common/position.js';
 import MyHeader from './../common/header.js';
-export default class ShopContainer extends Component {
+import {Link} from 'react-router';
+import {connect} from 'react-redux';
+ class ShopContainer extends Component {
     state = {
         collapsed: false
     };
@@ -44,34 +45,35 @@ export default class ShopContainer extends Component {
                     <div className="logo" >
                         <img src="" width='100' height='40' alt=""/>
                     </div>
-                    <Menu  className='nav' theme="light" mode="inline" defaultSelectedKeys={['nav1']} >
-                        <Menu.Item key="nav1" className="nav-label">
-                            <Icon type="user"  className='nav-icon'/>
-                            <span className="nav-text">个人信息</span>
+                    <Menu  className='nav' theme="light" mode="inline" defaultSelectedKeys={['shop1']} >
+                        <Menu.Item key="myinfor" className="nav-label">
+                            <Link to='/shop/myinfor'>
+                                <Icon type="user"  className='nav-icon'/>
+                                <span className="nav-text">个人信息</span>
+                            </Link>
                         </Menu.Item>
                         <MenuItemGroup key="g1" className='nav-sub' title={<span><Icon type="home" className='nav-icon' /><span className="nav-text">我的店铺</span></span>}>
-                            <Menu.Item key="sub1" className='second-nav second-nav-shop'>店铺一名字有点长怎么办我都不知道能不能显示完全</Menu.Item>
-                            <Menu.Item key="sub2" className='second-nav second-nav-shop'>店铺二</Menu.Item>
-                            <Menu.Item key="sub3" className='second-nav '><Icon type="plus"/>添加店铺</Menu.Item>
+                            <Menu.Item key="shop1" className='second-nav second-nav-shop'><Link to='/shop/myshop/1'>店铺一</Link></Menu.Item>
+                            <Menu.Item key="shop2" className='second-nav second-nav-shop'><Link to='/shop/myshop/2'>店铺二</Link></Menu.Item>
+                            <Menu.Item key="shopAdd" className='second-nav '><Link to='/shop/addshop'><Icon type="plus"/>添加店铺</Link></Menu.Item>
                         </MenuItemGroup>
-                        <Menu.Item key="nav3" className="nav-label">
-                            <Icon type="bars" className='nav-icon' />
-                            <span className="nav-text">店铺活动</span>
+                        <Menu.Item key="activity" className="nav-label">
+                            <Link to='/shop/activity'>
+                                <Icon type="bars" className='nav-icon' />
+                                <span className="nav-text">店铺活动</span>
+                            </Link>
                         </Menu.Item>
-                        <Menu.Item key="nav4" className="nav-label">
-                            <Icon type="solution" className='nav-icon' />
-                            <span className="nav-text">我的美文</span>
-                        </Menu.Item>
-                        <Menu.Item key="nav5" className="nav-label">
-                            <Icon type="edit" className='nav-icon' />
-                            <span className="nav-text">发布活动</span>
+                        <Menu.Item key="article" className="nav-label">
+                            <Link to='/shop/article'>
+                                <Icon type="solution" className='nav-icon' />
+                                <span className="nav-text">我的美文</span>
+                            </Link>
                         </Menu.Item>
                     </Menu>
                 </Sider>
                 <Layout>
                     <MyHeader collapsed={this.state.collapsed} toggle={()=>this.toggle()} />
-                    <Position />
-                    <Content style={{ margin: '0px 16px', padding:10, background: '#fff'}}>
+                    <Content style={{ margin: '20px 16px', padding:"10px 10px 40px 10px", background: '#fff'}}>
                         {this.props.children}
                     </Content>
                 </Layout>
@@ -79,3 +81,11 @@ export default class ShopContainer extends Component {
         );
     }
 }
+
+function mapStateToProps(state, ownProps) {
+    return {
+        id: ownProps.params.id,
+        routesTest: ownProps
+    };
+};
+export default  connect(mapStateToProps)(ShopContainer)

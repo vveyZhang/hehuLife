@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import PropTypes from 'prop-types';
 import { Table, Button,Icon,Popconfirm} from 'antd';
-
+import {Link} from 'react-router'
 const columns = [{
     title: '活动标题',
     dataIndex: 'title',
@@ -13,7 +13,7 @@ const columns = [{
 },{
     title: '店铺',
     dataIndex: 'shop',
-    width:'20%',
+    width:'15%',
     filters: [{
         text: '好喝奶行',
         value: '好喝奶行',
@@ -48,7 +48,7 @@ const columns = [{
                 <a href="#" className="ant-dropdown-link"><Icon type="edit" />编辑</a>
     </span>
         ),
-        width:'20%'
+        width:'15%'
 
     }
 ];
@@ -110,7 +110,7 @@ export default class ActivityList extends React.Component {
                             >删除</Button>
                     </Popconfirm>
                     <span style={{ marginLeft: 8 }}>{hasSelected ? `选择 ${selectedRowKeys.length}` : ''}</span>
-                    <Button type="primary" className="push-btn"><Icon type="upload"></Icon><span>发布活动</span></Button>
+                    <Button type="primary" className="push-btn"><Link to='/shop/pactivity'><Icon type="upload" /><span>发布活动</span></Link></Button>
                 </div>
                 <Table rowSelection={rowSelection} columns={columns} dataSource={data} />
             </div>

@@ -26,14 +26,8 @@ export default class PushArticle extends React.Component {
         current: 0,
         preview:false
     };
-    componentDidUpdate(){
-        if(this.state.current==1){
-            if(!editor){
-                StartEditor();
-                return
-            };
-            editor.undestroy();
-        };
+    componentDidMount(){
+        StartEditor();
     }
     closePreview=()=>{
         this.setState({
@@ -50,15 +44,28 @@ export default class PushArticle extends React.Component {
                     <Col className="push-title" span={8} ><p >文章标题：</p></Col>
                     <Col span={10}><Input placeholder="标题..."/></Col>
                 </Row>
+                <Row className="push-row">
+                    <Col className="push-title" span={8} ><p >文章标题：</p></Col>
+                    <Col span={10}>
+                        <Select defaultValue="1" style={{ width: 120 }} onChange={(value)=>console.log(value)}>
+                        <Option value="1">美食</Option>
+                        <Option value="2">美文</Option>
+                        <Option value="2">每周记</Option>
+                        </Select>
+                    </Col>
+                </Row>
                 <div id="editor"></div>
-                <Button type="primary" onClick={() => message.success('Processing complete!')}>完成</Button>
-                <Button style={{ marginLeft: 8 }} onClick={()=>{
+                <div className="push-article-btn" style={{textAlign:'center',margin:"20px auto"}}>
+                    <Button type="primary" onClick={() => message.success('Processing complete!')}>完成</Button>
+                    <Button style={{ marginLeft: 8 }} onClick={()=>{
                         this.setState({
                            preview:true
                         })
                         }}>
-                    预览
-                </Button>
+                        预览
+                    </Button>
+                </div>
+
                 <PhoneLayer status={this.state.preview} closePreview={this.closePreview}/>
             </div>
         );

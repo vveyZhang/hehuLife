@@ -16,6 +16,7 @@ const routes=
         <Route path="shop" component={ShopContainer}>
             <Route path="myinfor" component={MyInfor} />
             <Route path="myshop/:id" component={ShopInfor} />
+            <Route path="addshop" component={ShopInfor} />
             <Route path="activity" component={ActivityList} />
             <Route path="pactivity" component={PushActivity} />
             <Route path="article" component={ArticleList} />
