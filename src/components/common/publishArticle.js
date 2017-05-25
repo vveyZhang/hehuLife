@@ -39,7 +39,7 @@ export default class PushArticle extends React.Component {
         const imageUrl='';
 
         return (
-            <div>
+            <div className="publish-container">
                 <Row className="push-row">
                     <Col className="push-title" span={8} ><p >文章标题：</p></Col>
                     <Col span={10}><Input placeholder="标题..."/></Col>

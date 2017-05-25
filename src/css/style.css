@@ -301,3 +301,47 @@ ul.ant-table-pagination{
 .push-btn .anticon{
     margin-right: 6px;
 }
+.details-container{
+    width: 800px;
+    margin: 50px auto;
+}
+.details-title{
+    font-size: 18px;
+    text-align: center;
+    line-height: 24px;
+    padding: 5px;
+    font-weight: normal;
+}
+.details-source{
+    font-size: 14px;
+    color: #999999;
+    text-align: center;
+    line-height: 20px;
+    margin: 10px auto 20px;
+}
+.details-source span{
+    margin-right: 10px;
+}
+.details-scroll{
+    padding: 40px;
+    border-top: 1px solid #efefef;
+    border-bottom: 1px solid #efefef;
+    margin: 20px 0px;
+
+}
+.details-content{
+    font-size: 16px;
+    height: 400px;
+    overflow: auto;
+}
+.details-rows{
+    text-align: center;
+    margin: 30px auto;
+}
+.details-rows button{
+    margin: 0px 8px;
+}
+.publish-container{
+    width: 900px;
+    margin: 40px auto;
+}

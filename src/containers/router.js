@@ -12,6 +12,7 @@ import UserShop from '../components/userShops/index.js'
 import MyInfor from '../components/common/myInfor.js';
 import ArticleList from '../components/common/articleList.js'
 import PushArticle from '../components/common/publishArticle.js'
+import ArticleDetails from '../components/common/articleDetails.js'
 /*
 * 普通店铺
 * */
@@ -32,6 +33,7 @@ const routes=
             <Route path="myinfor" component={MyInfor} />
             <Route path="artlist" component={ArticleList} />
             <Route path="pubart" component={PushArticle} />
+            <Route path="article/:id" component={ArticleDetails} />
 
             <Route path="myshop/:id" component={MyShop} />
             <Route path="addshop" component={AddShop} />
