@@ -6,10 +6,7 @@ export default class LeftNav extends Component{
     render(){
         return(
             <div>
-                <div className="logo" >
-                    <img src="" width='100' height='40' alt=""/>
-                </div>
-                <Menu  className='nav' theme="light" mode="inline" defaultSelectedKeys={['shop1']} >
+                <Menu  className='nav' theme="light" mode="inline" defaultSelectedKeys={['myinfor']} >
                     <Menu.Item key="myinfor" className="nav-label">
                         <Link to='/usershop/myinfor'>
                             <Icon type="user"  className='nav-icon'/>

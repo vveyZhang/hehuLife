@@ -8,40 +8,15 @@ import MyHeader from './../common/header.js';
 import LeftNav from './leftNav.js'
 import {connect} from 'react-redux';
 export default class UserShop extends Component {
-    state = {
-        collapsed: false
-    };
-    componentDidMount(){
-      const ch=$(window).height();
-        $('.main').css({
-            'min-height':ch
-        });
-        $(window).on('resize',function(){
-            const ch=$(window).height();
-            $('.main').css({
-                'min-height':ch
-            });
-        })
-    };
-    componentUnMount(){
-        $(window).off('resize');
-    }
-    toggle = () => {
-        this.setState({
-            collapsed: !this.state.collapsed
-        });
-    }
     render() {
         return (
-            <Layout className="main">
-                <Sider trigger={null} collapsible collapsed={this.state.collapsed} collapsedWidth={0}
-                    className="main-left"
-                    >
-                    <LeftNav/>
-                </Sider>
-                <Layout>
-                    <MyHeader collapsed={this.state.collapsed} toggle={()=>this.toggle()} />
-                    <Content style={{ margin: '20px 16px', padding:"10px 10px 40px 10px", background: '#fff'}}>
+            <Layout className="main" style={{background:'#fafafa'}}>
+                <MyHeader />
+                <Layout style={{width:"1000px",margin:'84px auto 64px auto'}}>
+                    <Sider width={200} className="main-left">
+                        <LeftNav/>
+                    </Sider>
+                    <Content  style={{ borderLeft: '1px solid #e9e9e9', padding: '0 24px', background: "#fff" }}>
                         {this.props.children}
                     </Content>
                 </Layout>
