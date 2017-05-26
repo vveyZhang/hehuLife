@@ -32,10 +32,10 @@ class InforForm extends Component {
         const { getFieldDecorator,getFieldsError,getFieldsValue} = this.props.form;
         const itemLayout={
             labelCol: { span: 4 },
-            wrapperCol: { span: 14 }
+            wrapperCol: { span: 18 }
         }
         const BtnLayout={
-            wrapperCol: { span: 14,offset:4}
+            wrapperCol: { span: 18,offset:4}
         }
         return(
             <div className="infor-container ">

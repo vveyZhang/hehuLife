@@ -5,15 +5,11 @@ import {Link} from 'react-router'
 const columns = [{
     title: '活动标题',
     dataIndex: 'title',
-    width:'20%'
-}, {
-    title: '活动内容',
-    dataIndex: 'content',
-    width:'30%'
+    width:'200'
 },{
     title: '类型',
     dataIndex: 'type',
-    width:'15%',
+    width:'100',
     filters: [{
         text: '国内游',
         value: '国内游',
@@ -33,12 +29,12 @@ const columns = [{
     title: '点赞数',
     dataIndex: 'like',
     sorter: (a, b) => a.like - b.like,
-    width:'10%'
+    width:'100'
 }, {
     title: '创建时间',
     dataIndex: 'time',
     sorter: (a, b) => a.time - b.time,
-    width:'10%'
+    width:'100'
 },
     {
         title:"操作",
@@ -52,7 +48,7 @@ const columns = [{
                 <a href="#" className="ant-dropdown-link"><Icon type="edit" />编辑</a>
     </span>
         ),
-        width:'15%'
+        width:'150'
 
     }
 ];
@@ -62,7 +58,7 @@ for (let i = 0; i <30; i++) {
     if(i%2==0){
         data.push({
             key: i,
-            title: "有优惠",
+            title: "有优惠有优惠有优惠有优惠有优惠有优惠有优惠有优惠",
             content: "好喝",
             type: "国内游",
             like:i+5,

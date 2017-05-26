@@ -20,20 +20,20 @@ class InforForm extends Component {
         const { getFieldDecorator,getFieldsError,getFieldsValue} = this.props.form;
         const itemLayout={
             labelCol: { span: 4 },
-            wrapperCol: { span: 14 }
+            wrapperCol: { span: 18 }
         }
         const BtnLayout={
-            wrapperCol: { span: 14,offset:4}
+            wrapperCol: { span: 18,offset:4}
         }
         return(
             <div className="infor-container ">
                 <Row className="infor-row">
                     <Col span={4} ><p className='wx-label'>微信名：</p></Col>
-                    <Col span={14}><p className="wx-name">vvey</p></Col>
+                    <Col span={18}><p className="wx-name">vvey</p></Col>
                 </Row>
                 <Row className="infor-row">
                     <Col span={4} ><p className='wx-label'>用户类型：</p></Col>
-                    <Col span={14}><p className="wx-name">店主</p></Col>
+                    <Col span={18}><p className="wx-name">店主</p></Col>
                 </Row>
                 <Form onSubmit={this.handleSubmit} className="infor-form" layout='horizontal'>
                     <FormItem className="infor-row" label="性别：" {...itemLayout}>

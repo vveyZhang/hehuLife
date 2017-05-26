@@ -5,15 +5,11 @@ import {Link} from 'react-router'
 const columns = [{
     title: '标题',
     dataIndex: 'title',
-    width:'15%'
-}, {
-    title: '内容',
-    dataIndex: 'content',
-    width:'25%'
+    width:'200'
 },{
     title: '类型',
     dataIndex: 'type',
-    width:'15%',
+    width:'100',
     filters: [{
         text: '好喝奶行',
         value: '好喝奶行',
@@ -28,7 +24,7 @@ const columns = [{
 },{
     title: '状态',
     dataIndex: 'status',
-    width:'10%',
+    width:'100',
     filters: [{
         text: '审核中',
         value: "审核中"
@@ -48,12 +44,12 @@ const columns = [{
     title: '点赞数',
     dataIndex: 'like',
     sorter: (a, b) => a.like - b.like,
-    width:'10%'
+    width:'100'
 }, {
     title: '创建时间',
     dataIndex: 'time',
     sorter: (a, b) => a.time - b.time,
-    width:'10%'
+    width:'100'
 },
     {
         title:"操作",
@@ -67,7 +63,7 @@ const columns = [{
                 <a href="#" className="ant-dropdown-link"><Icon type="edit" />编辑</a>
     </span>
         ),
-        width:'25%'
+        width:'150'
 
     }
 ];
@@ -77,7 +73,6 @@ for (let i = 0; i <30; i++) {
     data.push({
         key: i,
         title: "有优惠",
-        content: "好喝",
         type: i%2==0?"好喝奶行":'呵护生活',
         like:i+5,
         status:i%2==0?"审核中":"已通过",
@@ -121,7 +116,7 @@ export default class ArticleList extends React.Component {
                     <span style={{ marginLeft: 8 }}>{hasSelected ? `选择 ${selectedRowKeys.length}` : ''}</span>
                     <Button type="primary" className="push-btn"><Link to="/usershop/pubart"><Icon  type="upload"></Icon><span>写文章</span></Link></Button>
                 </div>
-                <Table rowSelection={rowSelection} columns={columns} dataSource={data} />
+                <Table  rowSelection={rowSelection} columns={columns} dataSource={data} />
             </div>
         );
     }

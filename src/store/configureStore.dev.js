@@ -1,5 +1,5 @@
 import { createStore, compose,applyMiddleware } from 'redux';
-import todoReducers from '../reducers/reducers';
+import AppReducers from '../reducers/reducers';
 import thunk from 'redux-thunk';
 import promise from 'redux-promise';
 import logger from 'redux-logger';
@@ -10,7 +10,7 @@ const enhancer = compose(
 );
 
 export default function configureStore(initialState) {
-  const store = createStore(todoReducers,initialState, enhancer);
+  const store = createStore(AppReducers,initialState, enhancer);
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers
     module.hot.accept('../reducers/reducers', () =>

@@ -58,20 +58,20 @@ export default class PushActivity extends React.Component {
             title: '活动基本信息',
             content: <div>
                 <Row className="push-row">
-                    <Col className="push-title" span={8} ><p >活动标题：</p></Col>
-                    <Col span={10}><Input placeholder="标题..."/></Col>
+                    <Col className="push-title" span={4} ><p >活动标题：</p></Col>
+                    <Col span={18}><Input placeholder="标题..."/></Col>
                 </Row>
                 <Row className="push-row">
-                    <Col className="push-title" span={8} ><p >所属店铺：</p></Col>
-                    <Col span={10}>
+                    <Col className="push-title" span={4} ><p >所属店铺：</p></Col>
+                    <Col span={18}>
                         <Select defaultValue="shop1" style={{ width: 120 }} onChange={(value)=>console.log(value)}>
                             <Option value="shop1">店铺一</Option>
                             <Option value="shop2">店铺二</Option>
                         </Select></Col>
                 </Row>
                 <Row className="push-row">
-                    <Col className="push-title" span={8} ><p >活动头像：</p></Col>
-                    <Col span={10}>
+                    <Col className="push-title" span={4} ><p >活动头像：</p></Col>
+                    <Col span={18}>
                         <Upload
                             className="push-upload"
                             name="avatar"
@@ -85,8 +85,8 @@ export default class PushActivity extends React.Component {
                         </Upload></Col>
                 </Row>
                 <Row className="push-row">
-                    <Col className="push-title" span={8} ><p >备注：</p></Col>
-                    <Col span={10}><Input type='textarea' placeholder="比如：注意事项、时间、参加条件等等"/></Col>
+                    <Col className="push-title" span={4} ><p >备注：</p></Col>
+                    <Col span={18}><Input type='textarea' placeholder="比如：注意事项、时间、参加条件等等"/></Col>
                 </Row>
             </div>
         }, {
@@ -94,11 +94,11 @@ export default class PushActivity extends React.Component {
             content:''
         }];
         return (
-            <div className="push-activity-container">
+            <div className="publish-container">
                 <Steps current={current} style={{margin:"30px auto",width:'450px'}}>
                     {steps.map(item => <Step key={item.title} title={item.title} />)}
                 </Steps>
-                <div className="steps-content" style={{margin:"30px 100px"}}>{steps[this.state.current].content}
+                <div className="steps-content" >{steps[this.state.current].content}
                     <div id="editor" style={{display:this.state.current==1?'block':'none'}}></div>
                 </div>
                 <div className="steps-action" style={{"textAlign":'center'}}>
