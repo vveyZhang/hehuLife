@@ -80,7 +80,7 @@ Vue、Axios、JRoll、JTaro等工具/库的使用
         return(
             <div className="details-container">
                 <h1 className="details-title">文章详情标题</h1>
-                <div className="details-source">文章类型:<span>美食</span>作者：<span>vvey</span>时间：<span>2017-5-25</span></div>
+                <div className="details-source">文章类型:美食<span></span>作者：vvey<span></span>时间：2017-5-25</div>
                 <div className="details-scroll" >
                     <div className="details-content" dangerouslySetInnerHTML={{__html:html}}>
                     </div>

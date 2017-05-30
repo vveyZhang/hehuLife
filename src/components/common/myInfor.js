@@ -35,7 +35,7 @@ class InforForm extends Component {
                     <Col span={4} ><p className='wx-label'>用户类型：</p></Col>
                     <Col span={18}><p className="wx-name">店主</p></Col>
                 </Row>
-                <Form onSubmit={this.handleSubmit} className="infor-form" layout='horizontal'>
+                <Form className="infor-form" layout='horizontal'>
                     <FormItem className="infor-row" label="性别：" {...itemLayout}>
                         {getFieldDecorator('gender',{
                             required: true
@@ -45,6 +45,11 @@ class InforForm extends Component {
                                 <Radio value="2">女</Radio>
                                 <Radio value="3">保密</Radio>
                             </RadioGroup>
+                        )}
+                    </FormItem>
+                    <FormItem className="infor-row" label="简介：" {...itemLayout}>
+                        {getFieldDecorator('gender')(
+                            <Input placeholder="说点什么介绍自己..." />
                         )}
                     </FormItem>
                     <FormItem className="infor-row" label="生日：" {...itemLayout}>

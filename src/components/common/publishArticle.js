@@ -6,17 +6,6 @@ import PhoneLayer from './phone.js'
 const Step = Steps.Step;
 const Option = Select.Option;
 let editor=null;
-function beforeUpload(file) {
-    const isJPG = file.type === 'image/jpeg';
-    if (!isJPG) {
-        message.error('图片只能为jpg!');
-    }
-    const isLt1M = file.size/1024 <1024;
-    if (!isLt1M) {
-        message.error('图片大小不能超过1M!');
-    }
-    return isJPG && isLt1M;
-}
 function StartEditor(){
     editor = new wangEditor('editor');
     editor.create();

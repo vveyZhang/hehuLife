@@ -7,6 +7,7 @@ import {setPath} from '../../actions/pathAction.js'
  class LeftNav extends Component{
     render(){
         const {dispatch,pathName}=this.props;
+        console.log(this.props);
         const currentPath=pathName.split('/')[2]=='myshop'?'myshop'+pathName.split('/')[3]:pathName.split('/')[2];
         return(
             <div>
@@ -51,9 +52,10 @@ import {setPath} from '../../actions/pathAction.js'
         )
     }
 }
-function mapStateToProps(state){
+function mapStateToProps(state,ownProp){
     return{
-        pathName:state.routing.locationBeforeTransitions.pathname
+        pathName:state.routing.locationBeforeTransitions.pathname,
+        localhost:ownProp
 }
 }
 export default connect(mapStateToProps)(LeftNav)

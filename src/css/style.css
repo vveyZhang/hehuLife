@@ -63,7 +63,7 @@ body{
     font-size: 18px;
 }
 .infor-container{
-    margin: 50px 0px;
+    padding: 20px;
 }
 .wx-label{
     font-size: 16px;
@@ -304,8 +304,7 @@ ul.ant-table-pagination{
     margin-right: 6px;
 }
 .details-container{
-    width: 800px;
-    margin: 50px auto;
+    margin: 20px;
 }
 .details-title{
     font-size: 18px;
@@ -344,7 +343,7 @@ ul.ant-table-pagination{
     margin: 0px 8px;
 }
 .publish-container{
-    margin: 40px 0px;
+    margin: 20px 20px;
 }
 .ant-menu-inline, .ant-menu-vertical{
     border: none!important;

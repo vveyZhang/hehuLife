@@ -5,11 +5,11 @@ import {Link} from 'react-router'
 const columns = [{
     title: '标题',
     dataIndex: 'title',
-    width:'200'
+    width:'200px'
 },{
     title: '类型',
     dataIndex: 'type',
-    width:'100',
+    width:'100px',
     filters: [{
         text: '好喝奶行',
         value: '好喝奶行',
@@ -24,7 +24,7 @@ const columns = [{
 },{
     title: '状态',
     dataIndex: 'status',
-    width:'100',
+    width:'100px',
     filters: [{
         text: '审核中',
         value: "审核中"
@@ -44,12 +44,12 @@ const columns = [{
     title: '点赞数',
     dataIndex: 'like',
     sorter: (a, b) => a.like - b.like,
-    width:'100'
+    width:'100px'
 }, {
     title: '创建时间',
     dataIndex: 'time',
     sorter: (a, b) => a.time - b.time,
-    width:'100'
+    width:'100px'
 },
     {
         title:"操作",
@@ -63,7 +63,7 @@ const columns = [{
                 <a href="#" className="ant-dropdown-link"><Icon type="edit" />编辑</a>
     </span>
         ),
-        width:'150'
+        width:'150px'
 
     }
 ];
