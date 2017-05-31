@@ -2,7 +2,7 @@ var webpack=require('webpack');
 var webpackDevServer=require('webpack-dev-server');
 var config=require('./webpack.config/webpack.dev');
 new webpackDevServer(webpack(config),{
-    contentBase:"./src",
+    //contentBase:"./src",
     publicPath:config.output.publicPath,
     historyApiFallback:true,
     hot:true,

@@ -4,10 +4,10 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports={
     devtool:"cheap-module-source-map",
     entry:[
-        helper.root('src/index')
+        helper.root('app')
     ],
     output:{
-        path:helper.root('src/dist'),
+        path:helper.root('./dist'),
         filename:'app.js'
     },
     module: {

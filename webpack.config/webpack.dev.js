@@ -6,19 +6,18 @@ module.exports={
         'react-hot-loader/patch',
         'webpack-dev-server/client?http://localhost:8080',
         'webpack/hot/only-dev-server',
-        helper.root('src/index')
+        helper.root('app.js')
     ],
     output:{
-        path:helper.root('src/dist'),
+        path:helper.root('./dist'),
         filename:'app.js',
         publicPath:"/dist/",
         chunkFilename: '[id].chunk.js'
     },
     module: {
         loaders: [{
-            test: /\.js$/,
-            loaders: ['babel'],
-            include: helper.root('src')
+            test: /\.(js|jsx)$/,
+            loaders: ['babel']
         }, {
             test: /\.css$/,
             loader: 'style-loader!css-loader'

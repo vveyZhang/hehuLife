@@ -1,5 +1,4 @@
 var webpack = require('webpack');
-var helper=require('./helper');
 var vendors = [
     'react',
     'react-dom',
@@ -18,7 +17,7 @@ var vendors = [
 
 module.exports = {
     output: {
-        path: './src/build',
+        path: './build',
         filename: '[name].[chunkhash].js',
         library: '[name]_[chunkhash]'
     },
