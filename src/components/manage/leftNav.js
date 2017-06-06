@@ -18,12 +18,9 @@ import {connect} from 'react-redux';
                             <Link to='/manage/basic/safe'>安全中心</Link>
                         </Menu.Item>
                     </MenuItemGroup>
-                    <MenuItemGroup key="shop" className='nav-sub' title={<span><Icon type="home" className='nav-icon' /><span className="nav-text">管理店铺</span></span>}>
+                    <MenuItemGroup key="shop" className='nav-sub' title={<span><Icon type="home" className='nav-icon' /><span className="nav-text">店铺管理</span></span>}>
                         <Menu.Item key="manageshopinfor" className='second-nav second-nav-shop'>
                             <Link to='/manage/shop/infor'>店铺信息</Link>
-                        </Menu.Item>
-                        <Menu.Item key="manageshopactivitylist" className='second-nav second-nav-shop'>
-                            <Link to='/manage/shop/activity/list'>店铺活动</Link>
                         </Menu.Item>
                         <Menu.Item key="manageshopcoupons" className='second-nav second-nav-shop'>
                             <Link to='/manage/shop/coupons'>店铺卡包</Link>
@@ -35,15 +32,12 @@ import {connect} from 'react-redux';
                             <Link to='/manage/shop/clerks '>店员管理</Link>
                         </Menu.Item>
                     </MenuItemGroup>
-                    <MenuItemGroup key="wd" className='nav-sub' title={<span><Icon type="shop" className='nav-icon' /><span className="nav-text">微店管理</span></span>}>
-                        <Menu.Item key="managewdinfor" className='second-nav second-nav-shop'>
-                            <Link to='/manage/wd/infor'>微店信息</Link>
+                    <MenuItemGroup key="activity" className='nav-sub' title={<span><Icon type="shop" className='nav-icon' /><span className="nav-text">活动管理</span></span>}>
+                        <Menu.Item key="manageactivitylist" className='second-nav second-nav-shop'>
+                            <Link to='/manage/activity/list'>活动列表</Link>
                         </Menu.Item>
-                        <Menu.Item key="managewdactivity" className='second-nav second-nav-shop'>
-                            <Link to='/manage/wd/activity'>微店活动</Link>
-                        </Menu.Item>
-                        <Menu.Item key="managewdclerks " className='second-nav second-nav-shop'>
-                            <Link to='/manage/wd/clerks '>店员管理</Link>
+                        <Menu.Item key="manageactivitylist" className='second-nav second-nav-shop'>
+                            <Link to='/manage/activity/list'>店铺活动</Link>
                         </Menu.Item>
                     </MenuItemGroup>
                     <MenuItemGroup key="functional" className='nav-sub' title={<span><Icon type="appstore" className='nav-icon' /><span className="nav-text">功能</span></span>}>
