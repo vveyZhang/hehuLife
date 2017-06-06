@@ -1,10 +1,9 @@
 import React,{Component} from 'react';
 
-export default class Activity extends Component{
+export default class WdContainer extends Component{
     render(){
-        return (
+        return(
             <div>{this.props.children}</div>
         )
     }
 }
-

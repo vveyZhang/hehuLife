@@ -2,7 +2,6 @@ var webpack=require('webpack');
 var webpackDevServer=require('webpack-dev-server');
 var config=require('./webpack.config/webpack.dev');
 new webpackDevServer(webpack(config),{
-    //contentBase:"./src",
     publicPath:config.output.publicPath,
     historyApiFallback:true,
     hot:true,
@@ -13,3 +12,5 @@ new webpackDevServer(webpack(config),{
         if(err)console.log(err);
         console.log('Listening port 8080');
 });
+/*
+*   contentBase:"",*/

@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import PropTypes from 'prop-types';
-import { Steps, Button, message,Row,Col,Input,Upload,Select,Icon} from 'antd';
+import { Steps, Button, message,Row,Col,Input,Upload,Select,Icon,DatePicker } from 'antd';
 import wangEditor  from 'wangeditor';
 import PhoneLayer from '../../common/phone.js'
 const Step = Steps.Step;
@@ -62,15 +62,13 @@ export default class PublishActivity extends React.Component {
                     <Col span={18}><Input placeholder="标题..."/></Col>
                 </Row>
                 <Row className="push-row">
-                    <Col className="push-title" span={4} ><p >所属店铺：</p></Col>
+                    <Col className="push-title" span={4} ><p >下架时间：</p></Col>
                     <Col span={18}>
-                        <Select defaultValue="shop1" style={{ width: 120 }} onChange={(value)=>console.log(value)}>
-                            <Option value="shop1">店铺一</Option>
-                            <Option value="shop2">店铺二</Option>
-                        </Select></Col>
+                        <DatePicker placeholder="不填表示一直进行" />
+                    </Col>
                 </Row>
                 <Row className="push-row">
-                    <Col className="push-title" span={4} ><p >活动头像：</p></Col>
+                    <Col className="push-title" span={4} ><p >活动单品图：</p></Col>
                     <Col span={18}>
                         <Upload
                             className="push-upload"

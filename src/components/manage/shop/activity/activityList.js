@@ -41,7 +41,7 @@ const columns = [{
                     <Button  type="primary" size="small" icon="delete">删除</Button>
                 </Popconfirm>
                 <span className="ant-divider" />
-                <a href="#" className="ant-dropdown-link"><Icon type="edit" />编辑</a>
+                <Link to="/manage/shop/activity/details" className="ant-dropdown-link"><Icon type="edit" />编辑</Link>
     </span>
         ),
         width:'150px'
@@ -106,7 +106,7 @@ export default class ActivityList extends React.Component {
                             >删除</Button>
                     </Popconfirm>
                     <span style={{ marginLeft: 8 }}>{hasSelected ? `选择 ${selectedRowKeys.length}` : ''}</span>
-                    <Button type="primary" className="push-btn"><Link to='/usershop/pubact'><Icon type="upload" /><span>发布活动</span></Link></Button>
+                    <Button type="primary" className="push-btn"><Link to='/manage/shop/activity/publish'><Icon type="upload" /><span>发布活动</span></Link></Button>
                 </div>
                 <Table rowSelection={rowSelection} columns={columns} dataSource={data} />
             </div>

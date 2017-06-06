@@ -76,7 +76,7 @@ for (let i = 0; i <30; i++) {
     }
 }
 
-export default class TravelList extends React.Component {
+export default class WdActivityList extends React.Component {
     state = {
         selectedRowKeys: [],  // Check here to configure the default column
         loading: false,

@@ -26,11 +26,8 @@ body{
     overflow: hidden;
     background: #ffffff;
 }
-.nav{
-    padding-top: 40px;
-}
 .nav-icon{
-    font-size: 22px;
+    font-size: 20px;
 }
 .nav-text{
     font-size: 18px;
@@ -45,9 +42,14 @@ body{
     line-height: 60px!important;
     height: 60px!important;
 }
+.ant-menu{
+}
 .nav-sub{
-    border-bootom: 1px solid #ececec;
+    border-bottom: 1px solid #ececec;
     padding-left: 0px;
+}
+.nav-sub.last{
+    border-bottom: none;
 }
 .nav-sub .ant-menu-item-group-title{
    padding-left: 24px;
@@ -65,14 +67,14 @@ body{
 .infor-container{
     padding: 20px;
 }
-.wx-label{
+.infor-label{
     font-size: 16px;
     line-height: 40px;
     height: 40px;
     text-align: right;
     color: #000;
 }
-.wx-name{
+.infor-name{
     height: 40px;
     padding-left: 16px;
     line-height: 40px;
@@ -101,57 +103,44 @@ div.ant-form-item-label{
 div.ant-form-item-label label{
     color: #000000;
 }
-
-.shop-uploader-trigger,
-.shop-img{
-    width: 150px;
-    height: 150px;
-    margin: 0px auto;
-}
-.shop-uploader{
-    height: 170px;
-    width: 200px;
+.shop-photo-container{
+    overflow: hidden;
     text-align: center;
 }
-.upload-tips{
-    line-height: 20px;
-    font-size: 12px;
-    color: #666666;
-    white-space: normal;
-}
-.shop-img{
-    display: block;
-    border: 1px dashed #d9d9d9;
-    border-radius: 6px;
+.shop-uploader-picture{
+    height: 202px;
+    width: 402px;
+    text-align: center;
+    border: 1px solid #ececec;
+    display: inline-block;
+    position: relative;
     cursor: pointer;
 }
-.shop-uploader-trigger {
-    display: table-cell;
-    vertical-align: middle;
-    font-size: 28px;
-    color: #999;
+.shop-picture{
+    width: 400px;
+    height: 200px;
+    display: block;
+}
+.shop-uploader-picture:hover:hover .shop-uploader-tips{
+    display: block;
 }
 .shop-uploader-tips{
-    width: 100%;
-    height: 30px;
-    line-height: 30px;
-    position: absolute;
-    top: 50%;
-    margin-top: -15px;
-    left: 0px;
-    font-size: 20px;
-    color: #333;
+    background: rgba(0,0,0,.05);
+    width: 400px;
+    height: 200px;
+    font-size: 46px;
+    color: #fff;
+    line-height: 200px;
     text-align: center;
+    position: absolute;
+    top: 0px;
+    left: 0px;
     display: none;
-    cursor: pointer;
 }
 .shop-uploader{
-    position: relative;
     display: block;
 }
-.shop-uploader:hover .shop-uploader-tips{
-    display: block;
-}
+
 .infor-upload-row .ant-form-item-label{
     height: 150px;
     line-height: 150px;
@@ -220,11 +209,10 @@ ul.ant-table-pagination{
     color: #999999;
 }
 .push-row .ant-input{
-    font-size: 16px;
+    font-size: 14px;
     color: #333333;
     line-height: 40px;
     height: 40px;
-    width:80%;
 }
 .push-row textarea.ant-input{
     height: 200px;
@@ -346,11 +334,305 @@ ul.ant-table-pagination{
     margin: 20px 20px;
 }
 .ant-menu-inline, .ant-menu-vertical{
-    border: none!important;
+    border-right: none!important;
 }
 .ant-table-thead>tr>th{
     text-align: center;
 }
 .steps-action{
     margin-top: 40px;
+}
+
+/**/
+.basic-photo{
+    height: 120px;
+    width: 120px;
+    margin: 0px auto;
+    border-radius: 60px;
+    overflow: hidden;
+    border: 1px solid #efefef;
+}
+.basic-photo img{
+    display: block;
+}
+.basic-infor{
+    line-height: 60px;
+    font-size: 16px;
+    color: #333333;
+    text-align: center;
+    height: 60px;
+    padding-bottom: 10px;
+}
+.basic-infor span{
+    margin-right: 20px;
+    font-size: 18px;
+}
+.basic-infor-form{
+    margin-top: 20px;
+}
+.infor-row-submit{
+    text-align: center;
+    margin-top: 30px;
+}
+.change-phone-btn{
+    margin-left: 15px;
+}
+.safe-center{
+    padding: 40px 0px;
+}
+.safe-center-panel p{
+    height: 100px;
+    line-height: 100px;
+    font-size: 14px;
+    float: left;
+    text-align: center;
+}
+.safe-center-panel{
+    overflow: hidden;
+    border: 1px solid #ececec;
+    background: #ffffff;
+}
+.safe-center-panel p.name{
+    width: 157px;
+    font-size: 22px;
+    color: #333333;
+}
+.safe-center-panel p.tips{
+    width: 500px;
+    color: #666666;
+}
+.safe-center-panel p.tips span{
+    color: #000;
+    margin-left: 5px;
+    margin-right: 15px;
+    font-size: 16px;
+}
+.safe-center-panel p.btn{
+    width: 100px;
+}
+.safe-center-panel p.btn{
+    color: #005ea7;
+    cursor: pointer;
+}
+.safe-center-content{
+    height: 325px;
+    padding: 40px;
+    border: 1px solid #ececec;
+    border-top: none;
+    background: #ffffff;
+}
+.safe-content-steps{
+    margin: 10px 180px;
+}
+.steps-action{
+    text-align: center;
+}
+.steps-content{
+    padding-top: 20px;
+}
+
+/*店铺新样式*/
+.shop-photo-container{
+    margin-bottom: 25px;
+}
+.infor-show-content{
+    text-align: center;
+    position: relative;
+}
+.infor-show-content:hover{
+    background: #fefef2;
+}
+.shop-name{
+    line-height: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #333333;
+}
+.shop-editor{
+    font-size: 14px;
+    color: #00b38a;
+    position: absolute;
+    height: 30px;
+    line-height: 30px;
+    top: 5px;
+    right: 6px;
+    cursor: pointer;
+    display: none;
+    padding: 0px 10px;
+    border-radius: 3px;
+}
+.infor-show-content:hover .shop-editor{
+    display: block;
+}
+.shop-editor .icon{
+    margin-right: 6px;
+}
+.shop-name-input .shop-editor{
+    display: block;
+}
+.shop-name-input{
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    position: relative;
+}
+.shop-name-input input{
+    height: 40px;
+    line-height: 40px;
+    width: 300px;
+    border: 1px solid #ececec;
+    font-size: 22px;
+    text-align: center;
+    border-radius: 0px;
+    color: #333333;
+}
+.shop-editor.save{
+    right: 60px;
+    background:#00b38a;
+    color: #ffffff;
+}
+.shop-level{
+    font-size: 14px;
+    text-align: center;
+    color: #333333;
+    padding: 10px 0px 20px;
+    line-height: 30px;
+    height: 60px;
+    border-bottom: 1px solid #ececec;
+    margin-bottom: 15px;
+}
+.shop-level span{
+    margin-left: 28px;
+}
+.shop-basic-row{
+    line-height: 30px;
+    height: 30px;
+    color: #333333;
+    font-size: 14px;
+    text-align: center;
+}
+.shop-basic-row span{
+    margin: 0px 14px;
+}
+.shop-basic-container{
+    position: relative;
+}
+.shop-basic-container:hover{
+    background: #fefef2;
+}
+.shop-basic-container:hover .shop-editor{
+    display: block;
+}
+.shop-basic-from{
+    background: #fefef2;
+    padding: 40px 80px;
+}
+.shop-checkbox{
+    line-height: 40px;
+    height: 40px;
+}
+.shop-uploader-code{
+    width: 152px;
+    height: 152px;
+    cursor: pointer;
+}
+.shop-uploader-code img{
+    display: block;
+    border: 1px solid #ececec;
+}
+.uploader-code-trigger{
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    text-align: center;
+    border: 1px solid #ececec;
+    font-size: 34px;
+}
+.shop-introduce-title{
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 20px;
+    color: #333333;
+    margin: 10px  0px;
+    padding: 0px 12px;
+}
+.shop-introduce{
+    font-size: 14px;
+    color: #333333;
+    text-align: left;
+    line-height: 40px;
+    padding: 0px 12px;
+}
+.shop-introduce-btn{
+    padding: 0px 12px;
+    margin: 10px 0px;
+}
+.shop-introduce-editor{
+    text-align: center;
+}
+.shop-introduce-editor .ant-btn:hover,.shop-introduce-editor .ant-btn:focus{
+    color: #00b38a;
+    border: 1px solid #00b38a;
+}
+.shop-introduce-input textarea{
+    height: 320px!important;
+    padding: 12px;
+    line-height: 24px;
+    font-size: 14px;
+    color: #333333;
+    resize: none;
+}
+/*活动详情*/
+.activity-photo img{
+    width: 200px;
+    height: 200px;
+    display: block;
+    margin: 0px auto;
+}
+.activity-title{
+    margin-top: 35px;
+    line-height: 32px;
+    height: 32px;
+    font-size: 22px;
+    color: #333333;
+    text-align: center;
+}
+.activity-source p{
+    line-height: 34px;
+    font-size: 16px;
+    text-align: center;
+    color: #333333;
+}
+.activity-source{
+    margin-top: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ececec;
+}
+.activity-source p span{
+    margin-left: 32px;
+}
+.activity-content{
+    margin: 20px 40px;
+    min-height: 500px;
+}
+.activity-btn-container{
+    text-align: center;
+}
+.activity-btn{
+    width: 100px;
+    height: 30px;
+    border: 1px solid #ececec;
+    font-size: 14px;
+    color: #333333;
+    text-align: center;
+    display:inline-block;
+    border-radius: 5px;
+    line-height: 30px;
+}
+.activity-btn .anticon{
+    margin-right: 10px;
+}
+.ant-steps .ant-steps-head,.ant-steps .ant-steps-title{
+    background: none!important;
 }

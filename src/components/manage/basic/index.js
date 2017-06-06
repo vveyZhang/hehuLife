@@ -1,10 +1,8 @@
 import React,{Component} from 'react';
-
-export default class Activity extends Component{
+export default class Basic extends Component{
     render(){
-        return (
+        return(
             <div>{this.props.children}</div>
         )
     }
 }
-

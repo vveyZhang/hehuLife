@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import PropTypes from 'prop-types';
 import { Steps, Button, message,Row,Col,Input,Upload,Select,Icon} from 'antd';
 import wangEditor  from 'wangeditor';
-import PhoneLayer from '../common/phone.js'
+import PhoneLayer from '../../common/phone.js'
 const Step = Steps.Step;
 const Option = Select.Option;
 let editor=null;
@@ -21,7 +21,7 @@ function StartEditor(){
     editor = new wangEditor('editor');
     editor.create();
 }
-export default class PushTravel extends React.Component {
+export default class WdPublishActivity extends React.Component {
     state = {
         current: 0,
         preview:false
