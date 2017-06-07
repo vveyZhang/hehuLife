@@ -14,33 +14,41 @@ import {connect} from 'react-redux';
                         <Menu.Item key="managebasicinfor" className='second-nav second-nav-shop'>
                             <Link to='/manage/basic/infor'>我的信息</Link>
                         </Menu.Item>
+                        <Menu.Item key="managebasicmassage" className='second-nav second-nav-shop'>
+                            <Link to='/manage/basic/massage'>我的消息</Link>
+                        </Menu.Item>
                         <Menu.Item key="managebasicsafe" className='second-nav second-nav-shop'>
                             <Link to='/manage/basic/safe'>安全中心</Link>
                         </Menu.Item>
                     </MenuItemGroup>
-                    <MenuItemGroup key="shop" className='nav-sub' title={<span><Icon type="home" className='nav-icon' /><span className="nav-text">店铺管理</span></span>}>
+                    <MenuItemGroup key="shop" className='nav-sub' title={<span><Icon type="shop" className='nav-icon' /><span className="nav-text">店铺管理</span></span>}>
                         <Menu.Item key="manageshopinfor" className='second-nav second-nav-shop'>
                             <Link to='/manage/shop/infor'>店铺信息</Link>
                         </Menu.Item>
-                        <Menu.Item key="manageshopcoupons" className='second-nav second-nav-shop'>
-                            <Link to='/manage/shop/coupons'>店铺卡包</Link>
-                        </Menu.Item>
-                        <Menu.Item key="manageshopvalidation" className='second-nav second-nav-shop'>
-                            <Link to='/manage/shop/validation'>卡包验证</Link>
-                        </Menu.Item>
                         <Menu.Item key="manageshopclerks " className='second-nav second-nav-shop'>
-                            <Link to='/manage/shop/clerks '>店员管理</Link>
+                            <Link to='/manage/shop/clerks '>店铺成员</Link>
                         </Menu.Item>
                     </MenuItemGroup>
-                    <MenuItemGroup key="activity" className='nav-sub' title={<span><Icon type="shop" className='nav-icon' /><span className="nav-text">活动管理</span></span>}>
-                        <Menu.Item key="manageactivitylist" className='second-nav second-nav-shop'>
-                            <Link to='/manage/activity/list'>活动列表</Link>
-                        </Menu.Item>
+                    <MenuItemGroup key="activity" className='nav-sub' title={<span><Icon type="appstore-o" className='nav-icon' /><span className="nav-text">活动管理</span></span>}>
                         <Menu.Item key="manageactivitylist" className='second-nav second-nav-shop'>
                             <Link to='/manage/activity/list'>店铺活动</Link>
                         </Menu.Item>
+                        <Menu.Item key="manageactivitynew" className='second-nav second-nav-shop'>
+                            <Link to='/manage/activity/new'>新建活动</Link>
+                        </Menu.Item>
                     </MenuItemGroup>
-                    <MenuItemGroup key="functional" className='nav-sub' title={<span><Icon type="appstore" className='nav-icon' /><span className="nav-text">功能</span></span>}>
+                    <MenuItemGroup key="coupons" className='nav-sub' title={<span><Icon type="gift" className='nav-icon' /><span className="nav-text">卡包管理</span></span>}>
+                        <Menu.Item key="managecouponslist" className='second-nav second-nav-shop'>
+                            <Link to='/manage/coupons/list'>店铺卡包</Link>
+                        </Menu.Item>
+                        <Menu.Item key="managecouponsnew" className='second-nav second-nav-shop'>
+                            <Link to='/manage/coupons/new'>新建优惠卡</Link>
+                        </Menu.Item>
+                        <Menu.Item key="managecouponsvalidation" className='second-nav second-nav-shop'>
+                            <Link to='/manage/coupons/validation'>卡包验证</Link>
+                        </Menu.Item>
+                    </MenuItemGroup>
+                    <MenuItemGroup key="functional" className='nav-sub' title={<span><Icon type="api" className='nav-icon' /><span className="nav-text">功能</span></span>}>
                         <Menu.Item key="managefunctionalmass" className='second-nav second-nav-shop'>
                             <Link to='/manage/functional/mass'>活动群发</Link>
                         </Menu.Item>

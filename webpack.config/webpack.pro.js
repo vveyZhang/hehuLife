@@ -13,8 +13,7 @@ module.exports={
     module: {
         loaders: [{
             test: /\.js$/,
-            loaders: ['babel'],
-            include: helper.root('src')
+            loaders: ['babel']
         }, {
             test: /\.css$/,
             loader: 'style-loader!css-loader',
@@ -36,14 +35,12 @@ module.exports={
         }),
         //去掉重复
         new webpack.optimize.DedupePlugin(),
-        //压缩代码
         new webpack.optimize.UglifyJsPlugin({
-            mangle: {
-                keep_fnames: true
+            compress: {
+                warnings: false
             }
         }),
-        //抽离css
-        new ExtractTextPlugin("./bundle.css")
+
     ],
     resolve: {
         extensions: ['', '.js', '.json','.css','html']

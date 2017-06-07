@@ -166,6 +166,7 @@ div.ant-form-item-label label{
 .nav-sub .nav-icon{
     margin-right: 8px;
     color: rgba(0, 0, 0, 0.65098);
+    vertical-align: -1px;
 }
 .nav-sub .second-nav{
     padding-left: 34px!important;
@@ -632,7 +633,4 @@ ul.ant-table-pagination{
 }
 .activity-btn .anticon{
     margin-right: 10px;
-}
-.ant-steps .ant-steps-head,.ant-steps .ant-steps-title{
-    background: none!important;
 }

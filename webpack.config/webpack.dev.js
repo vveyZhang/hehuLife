@@ -9,9 +9,9 @@ module.exports={
         helper.root('app.js')
     ],
     output:{
-        path:helper.root('./dist'),
+        path:helper.root('./build'),
         filename:'app.js',
-        publicPath:"/dist/",
+        publicPath:"/build/",
         chunkFilename: '[id].chunk.js'
     },
     module: {
@@ -32,12 +32,7 @@ module.exports={
             context: __dirname,
             manifest:require('./../manifest.json')
         }),
-        new webpack.HotModuleReplacementPlugin(),
-        new webpack.DefinePlugin({
-            'process.env': {
-                'NODE_ENV': JSON.stringify('development')
-            }
-        })
+        new webpack.HotModuleReplacementPlugin()
     ],
     resolve: {
         extensions: ['', '.js', '.json','.css','html']

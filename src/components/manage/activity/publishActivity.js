@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import PropTypes from 'prop-types';
 import { Steps, Button, message,Row,Col,Input,Upload,Select,Icon,DatePicker } from 'antd';
 import wangEditor  from 'wangeditor';
-import PhoneLayer from '../../common/phone.js'
+import PhoneLayer from './../common/phone.js'
 const Step = Steps.Step;
 const Option = Select.Option;
 let editor=null;

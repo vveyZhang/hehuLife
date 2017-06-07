@@ -1,6 +1,6 @@
 import React from 'react';
 import {Route,IndexRoute,IndexRedirect} from 'react-router';
-import Activity from '../activity/activity.js';
+import Activity from 'index.js';
 import ActivityList from '../activity/activityList.js'
 import PublishActivity from '../activity/publishActivity.js'
 import Details from '../activity/activityDetails.js'
