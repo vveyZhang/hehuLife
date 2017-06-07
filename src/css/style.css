@@ -634,3 +634,10 @@ ul.ant-table-pagination{
 .activity-btn .anticon{
     margin-right: 10px;
 }
+.shop-type{
+    line-height: 40px;
+    font-size: 14px;
+    color: #333333;
+    text-align: center;
+    margin-top: 20px;
+}

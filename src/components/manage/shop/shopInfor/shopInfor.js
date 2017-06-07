@@ -36,7 +36,8 @@ class MyShop extends Component {
                     </Upload>
                 </div>
                 <Name name={name}></Name>
-                <p className="shop-level">经验等级：砖石<span></span>职位：店长</p>
+                <p className="shop-type">店铺类型：实体店22222</p>
+                <p className="shop-level">经验等级：砖石<span></span>职位：店长 </p>
                 <Basic />
                 <div className="shop-photo-container" style={{margin:"50px auto"}}>
                     <Upload

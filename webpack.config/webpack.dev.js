@@ -17,7 +17,7 @@ module.exports={
     module: {
         loaders: [{
             test: /\.(js|jsx)$/,
-            loaders: ['babel']
+            loaders: ['babel-loader']
         }, {
             test: /\.css$/,
             loader: 'style-loader!css-loader'
@@ -31,6 +31,11 @@ module.exports={
         new webpack.DllReferencePlugin({
             context: __dirname,
             manifest:require('./../manifest.json')
+        }),
+        new webpack.DefinePlugin({
+            'process.env': {
+                'NODE_ENV': JSON.stringify('development')
+            }
         }),
         new webpack.HotModuleReplacementPlugin()
     ],

@@ -11,7 +11,7 @@ const enhancer = compose(
 
 export default function configureStore(initialState) {
   const store = createStore(AppReducers,initialState, enhancer);
-  if (module.hot) {
+  if (module.hot&&process.env.NODE_ENV=="development") {
     // Enable Webpack hot module replacement for reducers
     module.hot.accept('../reducers/reducers', () =>
       store.replaceReducer(require('../reducers/reducers').default)

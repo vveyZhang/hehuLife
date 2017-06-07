@@ -1,10 +1,10 @@
 import React from 'react';
 import {Route,IndexRoute,IndexRedirect} from 'react-router';
-import Activity from 'index.js';
-import ActivityList from '../activity/activityList.js'
-import PublishActivity from '../activity/publishActivity.js'
-import Details from '../activity/activityDetails.js'
-import EditorActivity from '../activity/editActivity.js'
+import Activity from './index.js';
+import ActivityList from './activityList.js'
+import PublishActivity from './publishActivity.js'
+import Details from './activityDetails.js'
+import EditorActivity from './editActivity.js'
 const ActivityRoutes=<Route path="activity" compnent={Activity}>
     <Route path="list" component={ActivityList} />
     <Route path="publish" component={PublishActivity} />
@@ -12,4 +12,4 @@ const ActivityRoutes=<Route path="activity" compnent={Activity}>
     <Route path="edit" component={EditorActivity} />
 </Route>;
 
-export default shopRoutes
+export default ActivityRoutes
