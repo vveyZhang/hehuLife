@@ -5,71 +5,62 @@ import {Link} from 'react-router'
 const columns = [{
     title: '活动标题',
     dataIndex: 'title',
+    className:'title',
     width:'200px'
 },{
-    title: '店铺',
-    dataIndex: 'shop',
-    width:'100',
+    title: '状态',
+    dataIndex: 'status',
+    width:'100px',
     filters: [{
-        text: '好喝奶行',
-        value: '好喝奶行',
+        text: '未发布',
+        value: '未发布',
     },{
-        text: '呵护生活',
-        value: '呵护生活',
+        text: '发布中',
+        value: '发布中',
     }
     ],
     onFilter: (value, record) =>{
-        if(value==record.shop) return record
+        if(value==record.status) return record
     }
 }, {
     title: '点赞数',
     dataIndex: 'like',
     sorter: (a, b) => a.like - b.like,
-    width:'100px'
-}, {
-    title: '创建时间',
-    dataIndex: 'time',
-    sorter: (a, b) => a.time - b.time,
-    width:'100px'
+    width:'80px'
 },
     {
         title:"操作",
         dataIndex:"setting",
-        render: (text, record) => (
+        render: (text, record) =>{
+            const  status=record.status=="发布中"?"下架":"发布";
+            return(
             <span>
+                <Popconfirm placement="top" title="确认删除？" onConfirm={confirm} okText="删除" cancelText="再想想">
+                    <Button  type="primary" size="small">{status}</Button>
+                </Popconfirm>
+                <span className="ant-divider" />
                 <Popconfirm placement="top" title="确认删除？" onConfirm={confirm} okText="删除" cancelText="再想想">
                     <Button  type="primary" size="small" icon="delete">删除</Button>
                 </Popconfirm>
                 <span className="ant-divider" />
-                <Link to="/manage/activity/details" className="ant-dropdown-link"><Icon type="edit" />编辑</Link>
+                 <Button  type="primary" size="small" icon="edit">编辑</Button>
+
+
     </span>
-        ),
-        width:'150px'
+        )},
+        width:'190px'
 
     }
 ];
 
 const data = [];
 for (let i = 0; i <30; i++) {
-    if(i%2==0){
-        data.push({
-            key: i,
-            title: "有优惠",
-            content: "好喝",
-            shop: "好喝奶行",
-            like:i+5,
-            time:'2015'
-        });
-    }else{
-        data.push({
-            key: i,
-            title: "有优惠",
-            content: "健康",
-            shop: "呵护生活",
-            like:i+5,
-            time:'2015',
-        });
-    }
+    data.push({
+        key: i,
+        title: "有优惠",
+        status: i%2==0?"发布中":'未发布',
+        like:i+5
+    });
 }
 
 export default class ActivityList extends React.Component {
@@ -80,6 +71,7 @@ export default class ActivityList extends React.Component {
     start = () => {
         this.setState({ loading: true });
         // ajax request after empty completing
+        console.log(1)
         setTimeout(() => {
             this.setState({
                 selectedRowKeys: [],
@@ -105,10 +97,17 @@ export default class ActivityList extends React.Component {
                         <Button type="primary" onClick={this.start}disabled={!hasSelected} loading={loading}
                             >删除</Button>
                     </Popconfirm>
+                    <Popconfirm placement="top" title="确认删除所选中活动？" onConfirm={confirm} okText="删除" cancelText="再想想">
+                        <Button type="primary" onClick={this.start}disabled={!hasSelected} loading={loading}
+                            >发布</Button>
+                    </Popconfirm>
+                    <Popconfirm placement="top" title="确认删除所选中活动？" onConfirm={confirm} okText="删除" cancelText="再想想">
+                        <Button type="primary" onClick={this.start}disabled={!hasSelected} loading={loading}
+                            >下架</Button>
+                    </Popconfirm>
                     <span style={{ marginLeft: 8 }}>{hasSelected ? `选择 ${selectedRowKeys.length}` : ''}</span>
-                    <Button type="primary" className="push-btn"><Link to='/manage/activity/publish'><Icon type="upload" /><span>发布活动</span></Link></Button>
                 </div>
-                <Table rowSelection={rowSelection} columns={columns} dataSource={data} />
+                <Table className="activity-table" rowSelection={rowSelection} columns={columns} dataSource={data} />
             </div>
         );
     }

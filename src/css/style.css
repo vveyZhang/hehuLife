@@ -641,3 +641,13 @@ ul.ant-table-pagination{
     text-align: center;
     margin-top: 20px;
 }
+.activity-table .ant-table-thead > tr > th,.activity-table td{
+    text-align: center;
+}
+.activity-table th.ant-table-selection-column,.activity-table td.ant-table-selection-column{
+    width: 22px!important;
+    min-width: 22px!important;
+}
+.activity-table td.title{
+    text-align: left;
+}

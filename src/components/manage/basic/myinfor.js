@@ -32,7 +32,7 @@ class InforForm extends Component {
                     <img src="https://qlogo1.store.qq.com/qzone/759625328/759625328/100?1394768297" alt="" width="120" height="120"/>
                 </div>
                 <div className="basic-infor">
-                    用户名：<span>vvey</span>用户等级：专属会员222
+                    用户名：<span>vvey</span>用户等级：专属会
                 </div>
                 <Form className="basic-infor-form " layout='horizontal'>
                     <FormItem className="infor-row" label="昵称：" {...itemLayout}>
