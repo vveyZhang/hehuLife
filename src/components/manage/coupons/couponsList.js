@@ -1,50 +1,34 @@
 import React,{Component} from 'react'
-import { Table, Badge, Menu, Dropdown, Icon } from 'antd';
-
-const menu = (
-    <Menu>
-        <Menu.Item>
-            Action 1
-        </Menu.Item>
-        <Menu.Item>
-            Action 2
-        </Menu.Item>
-    </Menu>
-);
+import { Table, Badge, Dropdown, Icon } from 'antd';
 
 export default  function NestedTable() {
-    const expandedRowRender = () => {
+    const expandedRowRender = (test) => {
+        console.log(test)
+
         const columns = [
-            { title: 'Date', dataIndex: 'date', key: 'date' },
-            { title: 'Name', dataIndex: 'name', key: 'name' },
-            { title: 'Status', key: 'state', render: () => <span><Badge status="success" />Finished</span> },
-            { title: 'Upgrade Status', dataIndex: 'upgradeNum', key: 'upgradeNum' },
-            {
-                title: 'Action',
-                dataIndex: 'operation',
-                key: 'operation',
-                render: () => (
-                    <span className={'table-operation'}>
-            <a href="#">Pause</a>
-            <a href="#">Stop</a>
-            <Dropdown overlay={menu}>
-                <a href="#">
-                    More <Icon type="down" />
-                </a>
-            </Dropdown>
-          </span>
-                ),
-            },
+            { title: '领取用户', dataIndex: 'name', key: 'name' },
+            { title: '领取时间', dataIndex: 'getTime', key: 'getTime' },
+            { title:'用户手机号',key:"phone",dataIndex:"phone"},
+            { title: '是否使用', key: 'status', dataIndex: 'status', filters: [{
+                text: '是',
+                value: '是'
+            },{
+                text: '否',
+                value: '否'
+            }
+            ],
+                onFilter: (value, record) =>{
+                    if(value==record.status) return record
+                }}
         ];
 
         const data = [];
-        for (let i = 0; i < 3; ++i) {
-            if(i%2==0)break;
+        for (let i = 0; i < 1; ++i) {
             data.push({
-                key: i,
-                date: '2014-12-24 23:12:00',
-                name: 'This is production name',
-                upgradeNum: 'Upgraded: 56',
+                id: i,
+                name: test.key==1?100:i,
+                phone: 'This is production name',
+                status: 'Upgraded: 56',
             });
         }
         return (
@@ -57,24 +41,24 @@ export default  function NestedTable() {
     };
 
     const columns = [
-        { title: 'Name', dataIndex: 'name', key: 'name' },
-        { title: 'Platform', dataIndex: 'platform', key: 'platform' },
-        { title: 'Version', dataIndex: 'version', key: 'version' },
-        { title: 'Upgraded', dataIndex: 'upgradeNum', key: 'upgradeNum' },
-        { title: 'Creator', dataIndex: 'creator', key: 'creator' },
-        { title: 'Date', dataIndex: 'createdAt', key: 'createdAt' },
-        { title: 'Action', key: 'operation', render: () => <a href="#">Publish</a> },
+        { title: '名称', dataIndex: 'name', key: 'name' },
+        { title: '类型', dataIndex: 'type', key: 'type' },
+        { title: '开始时间', dataIndex: 'startTime', key: 'startTime' },
+        { title: '结束时间', dataIndex: 'overTime', key: 'overTime' },
+        { title: '总共张数', dataIndex: 'total', key: 'total' },
+        { title: '剩余张数', dataIndex: 'residue', key: 'residue' },
+        { title: '操作', key: 'operation', render: () => <a href="javascript:void(0)">编辑</a> },
     ];
 
     const data = [];
     for (let i = 0; i < 3; ++i) {
         data.push({
             key: i,
-            name: 'Screem',
-            platform: 'iOS',
-            version: '10.3.4.5654',
-            upgradeNum: 500,
-            creator: 'Jack',
+            type: '礼品卡',
+            startTime: '2017-6-11',
+            overTime: '2017-6-13',
+            total: 500,
+            residue: 100,
             createdAt: '2014-12-24 23:12:00',
         });
     }

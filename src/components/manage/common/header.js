@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import PropTypes from 'prop-types';
 import { Layout, Icon } from 'antd';
-const { Header} = Layout;
+const {Header} = Layout;
 export default class MyHeader extends Component{
     render(){
         return(

@@ -4,9 +4,9 @@ import { Form, Input,Upload,Icon,message, Button,Row,Col,Radio,DatePicker} from 
 import {Link} from 'react-router'
 const FormItem = Form.Item;
 const RadioGroup=Radio.Group;
-class InforForm extends Component {
+class MyInforForm extends Component {
     state={
-        shopName:'好喝奶行'
+        shopName:'好喝奶行3333'
     }
     normFile = (e) => {
         if (Array.isArray(e)) {
@@ -32,9 +32,8 @@ class InforForm extends Component {
                     <img src="https://qlogo1.store.qq.com/qzone/759625328/759625328/100?1394768297" alt="" width="120" height="120"/>
                 </div>
                 <div className="basic-infor">
-                    用户名：<span>vvey</span>用户等级：专属会
+                    用户名：<span>vvey</span>用户等级：专属22444444
                 </div>
-                <Form className="basic-infor-form " layout='horizontal'>
                     <FormItem className="infor-row" label="昵称：" {...itemLayout}>
                         {getFieldDecorator('name',{
                             rules: [
@@ -57,7 +56,6 @@ class InforForm extends Component {
                         )}
                     </FormItem>
                     <FormItem className="infor-row" label="简介：" {...itemLayout}>
-
                         {getFieldDecorator('gender',{
                             rules: [{type:'string',max:25,message: '介绍不能多超过25字符'}]
                         })(
@@ -74,12 +72,11 @@ class InforForm extends Component {
                         <Col span={14}><p className="infor-name">13678077665 <Link className="change-phone-btn">更改</Link></p></Col>
                     </Row>
                     <div className="infor-row infor-row-submit">
-                        <Button type="primary"  htmlType="submit" size="large">保存</Button>
+                        <Button type="primary"  size="large">保存</Button>
                     </div>
-                </Form>
             </div>
         )
     }
 }
-const MyInfor= Form.create()(InforForm);
+const MyInfor= Form.create()(MyInforForm);
 export default MyInfor

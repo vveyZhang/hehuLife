@@ -27,7 +27,7 @@ class MyShop extends Component {
                         name="avatar"
                         showUploadList={false}
                         multiple={false}
-                        beforeUpload={beforeUpload}
+                        beforeUpload={()=>beforeUpload()}
                         >
                         <div className="shop-picture-container">
                             <img src={url} alt="" className="shop-picture" />
@@ -36,8 +36,8 @@ class MyShop extends Component {
                     </Upload>
                 </div>
                 <Name name={name}></Name>
-                <p className="shop-type">店铺类型：实体店22222</p>
-                <p className="shop-level">经验等级：砖石<span></span>职位：店长 </p>
+                <p className="shop-type">店铺类型：实体店22www222</p>
+                <p className="shop-level">经验等级：砖石<span></span>职位：店长22222223333 </p>
                 <Basic />
                 <div className="shop-photo-container" style={{margin:"50px auto"}}>
                     <Upload
@@ -45,7 +45,7 @@ class MyShop extends Component {
                         name="avatar"
                         showUploadList={false}
                         multiple={false}
-                        beforeUpload={beforeUpload}
+                        beforeUpload={()=>beforeUpload}
                         >
                         {
                             codeUrl?<img src={codeUrl} alt="" width="150" height="150"/>:

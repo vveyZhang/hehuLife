@@ -648,6 +648,12 @@ ul.ant-table-pagination{
     width: 22px!important;
     min-width: 22px!important;
 }
-.activity-table td.title{
+.activity-table td.title,.activity-table .ant-table-thead > tr > th.title{
     text-align: left;
+}
+.table-btn{
+    margin-right: 15px;
+}
+.activity-edit-btn a{
+    color: #ffffff;
 }

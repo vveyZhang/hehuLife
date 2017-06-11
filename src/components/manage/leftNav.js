@@ -92,10 +92,9 @@ import {connect} from 'react-redux';
         )
     }
 }
-function mapStateToProps(state,ownProp){
+function mapStateToProps(state){
     return{
         pathName:state.routing.locationBeforeTransitions.pathname,
-        localhost:ownProp
 }
 }
 export default connect(mapStateToProps)(LeftNav)

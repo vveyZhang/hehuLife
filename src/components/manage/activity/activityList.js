@@ -40,12 +40,10 @@ const columns = [{
                 </Popconfirm>
                 <span className="ant-divider" />
                 <Popconfirm placement="top" title="确认删除？" onConfirm={confirm} okText="删除" cancelText="再想想">
-                    <Button  type="primary" size="small" icon="delete">删除</Button>
+                    <Button  type="primary" size="small">删除</Button>
                 </Popconfirm>
                 <span className="ant-divider" />
-                 <Button  type="primary" size="small" icon="edit">编辑</Button>
-
-
+                 <Button  type="primary" size="small" className="activity-edit-btn"><Link to="/manage/activity/edit/1">编辑</Link></Button>
     </span>
         )},
         width:'190px'
@@ -79,8 +77,9 @@ export default class ActivityList extends React.Component {
             });
         }, 1000);
     }
-    onSelectChange = (selectedRowKeys) => {
-        console.log('selectedRowKeys changed: ', selectedRowKeys);
+    onSelectChange = (selectedRowKeys,tits) => {
+        console.log(2)
+        console.log('selectedRowKeys changed: ', tits);
         this.setState({ selectedRowKeys });
     }
     render() {
@@ -94,15 +93,15 @@ export default class ActivityList extends React.Component {
             <div style={{padding:20}}>
                 <div style={{ marginBottom: 16 }}>
                     <Popconfirm placement="top" title="确认删除所选中活动？" onConfirm={confirm} okText="删除" cancelText="再想想">
-                        <Button type="primary" onClick={this.start}disabled={!hasSelected} loading={loading}
+                        <Button type="primary" className="table-btn" onClick={this.start}disabled={!hasSelected} loading={loading}
                             >删除</Button>
                     </Popconfirm>
                     <Popconfirm placement="top" title="确认删除所选中活动？" onConfirm={confirm} okText="删除" cancelText="再想想">
-                        <Button type="primary" onClick={this.start}disabled={!hasSelected} loading={loading}
+                        <Button type="primary" className="table-btn" onClick={this.start}disabled={!hasSelected} loading={loading}
                             >发布</Button>
                     </Popconfirm>
                     <Popconfirm placement="top" title="确认删除所选中活动？" onConfirm={confirm} okText="删除" cancelText="再想想">
-                        <Button type="primary" onClick={this.start}disabled={!hasSelected} loading={loading}
+                        <Button type="primary" className="table-btn" onClick={this.start}disabled={!hasSelected} loading={loading}
                             >下架</Button>
                     </Popconfirm>
                     <span style={{ marginLeft: 8 }}>{hasSelected ? `选择 ${selectedRowKeys.length}` : ''}</span>

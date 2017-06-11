@@ -32,11 +32,9 @@ export default class EditorActivity extends React.Component {
                 StartEditor();
                 return
             };
-            editor.undestroy();
         };
     }
     next() {
-
         const current = this.state.current + 1;
         this.setState({ current });
 
@@ -62,7 +60,7 @@ export default class EditorActivity extends React.Component {
                     <Col span={18}><Input placeholder="标题..."/></Col>
                 </Row>
                 <Row className="push-row">
-                    <Col className="push-title" span={4} ><p >所属店铺：</p></Col>
+                    <Col className="push-title" span={4} ><p >所属店铺1：</p></Col>
                     <Col span={18}>
                         <Select defaultValue="1" style={{ width: 120 }} onChange={(value)=>console.log(value)}>
                             <Option value="1">发布</Option>

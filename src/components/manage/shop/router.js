@@ -8,8 +8,8 @@ import ActivityList from '../activity/activityList.js'
 import PublishActivity from '../activity/publishActivity.js'
 import Details from '../activity/activityDetails.js'
 import EditorActivity from '../activity/editActivity.js'
-const shopRoutes=<Route path="shop" component={Shop}>
+const shopRoutes=(<Route path="shop" component={Shop}>
     <Route path="infor" component={MyShop} />
-</Route>;
+</Route>);
 
 export default shopRoutes
