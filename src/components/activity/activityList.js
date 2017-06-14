@@ -78,8 +78,6 @@ export default class ActivityList extends React.Component {
         }, 1000);
     }
     onSelectChange = (selectedRowKeys,tits) => {
-        console.log(2)
-        console.log('selectedRowKeys changed: ', tits);
         this.setState({ selectedRowKeys });
     }
     render() {

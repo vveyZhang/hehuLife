@@ -14,8 +14,8 @@ import {connect} from 'react-redux';
                         <Menu.Item key="managebasicinfor" className='second-nav second-nav-shop'>
                             <Link to='/manage/basic/infor'>我的信息</Link>
                         </Menu.Item>
-                        <Menu.Item key="managebasicmassage" className='second-nav second-nav-shop'>
-                            <Link to='/manage/basic/massage'>我的消息</Link>
+                        <Menu.Item key="managebasicmessage" className='second-nav second-nav-shop'>
+                            <Link to='/manage/basic/message'>我的消息</Link>
                         </Menu.Item>
                         <Menu.Item key="managebasicsafe" className='second-nav second-nav-shop'>
                             <Link to='/manage/basic/safe'>安全中心</Link>
