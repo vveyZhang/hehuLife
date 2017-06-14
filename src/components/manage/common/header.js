@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import PropTypes from 'prop-types';
 import { Layout, Icon } from 'antd';
 const {Header} = Layout;
+import "../../../css/style.css";
 export default class MyHeader extends Component{
     render(){
         return(

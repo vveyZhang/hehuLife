@@ -1,6 +1,4 @@
-/*
-* 安全中心
-* */
+
 import React,{Component} from 'react';
 import { Steps, Button, message,Row,Col,Input} from 'antd';
 const Step = Steps.Step;

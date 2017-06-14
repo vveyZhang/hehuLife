@@ -41,9 +41,6 @@ import {connect} from 'react-redux';
                         <Menu.Item key="managecouponslist" className='second-nav second-nav-shop'>
                             <Link to='/manage/coupons/list'>店铺卡包</Link>
                         </Menu.Item>
-                        <Menu.Item key="managecouponsnew" className='second-nav second-nav-shop'>
-                            <Link to='/manage/coupons/new'>新建优惠卡</Link>
-                        </Menu.Item>
                         <Menu.Item key="managecouponsvalidation" className='second-nav second-nav-shop'>
                             <Link to='/manage/coupons/validation'>卡包验证</Link>
                         </Menu.Item>

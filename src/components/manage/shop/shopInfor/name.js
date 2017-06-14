@@ -21,7 +21,7 @@ export default class Name extends Component{
     }
     render(){
         const {name}=this.props
-        return(<div>
+        return(<div className="shop-infor">
             {
                 !this.state.editor?
                     <div className="infor-show-content">

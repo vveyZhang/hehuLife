@@ -657,3 +657,20 @@ ul.ant-table-pagination{
 .activity-edit-btn a{
     color: #ffffff;
 }
+
+/*卡包*/
+.coupons-layer .ant-form-item-control input{
+    font-size: 14px;
+    line-height: 30px;
+    height: 30px;
+}
+.coupons-layer .ant-form-item-label{
+    height: 32px;
+    line-height: 32px;
+}
+.coupons-layer .ant-form-item-label label{
+    font-size: 14px;
+}
+.coupons-layer .ant-form-item-label{
+    text-align: right!important;
+}
